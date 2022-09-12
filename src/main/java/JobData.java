@@ -79,7 +79,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -98,14 +98,14 @@ public class JobData {
         // load data, if not already loaded
         loadData();
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-        String lowerCase = value.toLowerCase();
+//        String lowerCase = value.toLowerCase();
 
         for (HashMap<String, String> row : allJobs) { //goes through one row
 //            boolean isAdded = false;
             for (String key : row.keySet()) {  //goes through a single row a gets the info
-//                if (!isAdded) {  //added is false but if it is true it will go through this funtion
-                    String aValue = row.get(key); //puts userinput into lowercase so program is case insensitive
-                if (aValue.toLowerCase().contains(value.toLowerCase())) {  //compares userinput to values in the job data sheet. if there is a match it will be added
+//                if (!isAdded) {  //added is false but if it is true it will go through this function
+                    String aValue = row.get(key); //puts user input into lowercase so program is case insensitive
+                if (aValue.toLowerCase().contains(value.toLowerCase())) {  //compares user input to values in the job data sheet. if there is a match it will be added
                         jobs.add(row);
 //                        isAdded = true;
                      break;
